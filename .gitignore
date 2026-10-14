@@ -322,3 +322,14 @@ native/fts5_cjk/*.so
 /pm/.lock.json.lock
 
 apps/desktop/.dist-build*
+
+# Local (non-upstream) working-tree artifacts on this host. Keeping them out of
+# `git status --porcelain` is not just tidiness: `hermes update` SKIPS the entire
+# code update while the tree is dirty, and UNTRACKED counts as dirty — so a
+# permanent untracked set silently disables updates altogether.
+.local/
+cookies.json
+tinker-atropos/
+agent/kanban_notify.py
+scripts/ttfb_probe.py
+plugins/memory/workstation-embed/
